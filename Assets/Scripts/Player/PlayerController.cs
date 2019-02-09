@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Editable from Unity Editor (needs to be initialzed directly);
     private GameplayManager gameplayManager;
-    private float speed = 5f;
+    private float speed = 8f;
     private Rigidbody2D thisRigidbody;
 
     // Start is called before the first frame update

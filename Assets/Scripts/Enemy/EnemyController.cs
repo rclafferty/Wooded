@@ -7,21 +7,30 @@ public class EnemyController : MonoBehaviour
     private GameplayManager gameplayManager;
     private float speed = 5f;
     private Rigidbody2D thisRigidbody;
+    private float playerDistanceThreshold;
 
     // Start is called before the first frame update
     void Start()
     {
         gameplayManager = GameObject.Find("Gameplay Manager").GetComponent<GameplayManager>();
         thisRigidbody = this.GetComponent<Rigidbody2D>();
+        playerDistanceThreshold = 10.0f;
     }
+
+    [SerializeField]
+    float distanceToPlayer;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distanceToPlayer = GetDistance(thisRigidbody.position, gameplayManager.MainPlayerRigidbody.position);
-        if (Mathf.Abs(distanceToPlayer) < 30.0f)
+        distanceToPlayer = GetDistance(thisRigidbody.position, gameplayManager.MainPlayerRigidbody.position);
+        if (Mathf.Abs(distanceToPlayer) < playerDistanceThreshold && Mathf.Abs(distanceToPlayer) > 1.0f)
         {
             MoveTowardPlayer(distanceToPlayer);
+        }
+        else
+        {
+            thisRigidbody.velocity = Vector2.zero;
         }
     }
 
@@ -46,15 +55,18 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 GetDifferenceVector(Vector2 v1, Vector2 v2)
     {
-        Vector2 v = (v1 - v2);
+        //Vector2 v = (v1 - v2);
+        Vector2 v = new Vector2();
+        v.x = v1.x - v2.x;
+        v.y = v1.y - v2.y;
         return v;
     }
 
     private Vector2 GetNormalizedDifferenceVector(Vector2 v1, Vector2 v2)
     {
         Vector2 v = GetDifferenceVector(v1, v2);
-        v.Normalize();
-        return v;
+        // v.Normalize();
+        return v.normalized;
     }
 
     // Getter / Setter Methods
