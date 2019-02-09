@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Editable from Unity Editor (needs to be initialzed directly);
     private GameplayManager gameplayManager;
     private float speed = 8f;
-    private Rigidbody2D thisRigidbody;
+    private Rigidbody2D thisRigidBody;
+    private float hInput = 0;
+    private float vInput = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        thisRigidbody = this.GetComponent<Rigidbody2D>();
+        thisRigidBody = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        hInput = Input.GetAxis("Horizontal");
+        vInput = Input.GetAxis("Vertical");
+    }
+
     void FixedUpdate()
     {
-        float hInput = Input.GetAxis("Horizontal");
-        float vInput = Input.GetAxis("Vertical");
-
-        if(Mathf.Abs(hInput) > deadValue || Mathf.Abs(vInput) > deadValue)
-        {
+        //if(Mathf.Abs(hInput) > 0.5 || Mathf.Abs(vInput) > 0.5)
+        //{
             thisRigidBody.velocity = new Vector2(hInput * speed, vInput * speed);
 
             // MoveLeft(x, y) --> Move diagonally with left animation
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
             // MoveRight(x, y)
 
             // ...
-        }
+        //}
     }
 
     private float GetDistance(Vector2 t1, Vector2 t2)
@@ -70,15 +73,3 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
-
-        float vInput = Input.GetAxis("Vertical");
-
-        if(Mathf.Abs(hInput) > deadValue || Mathf.Abs(vInput) > deadValue)
-        {
-            thisRigidBody.velocity = new Vector2(hInput * speed, vInput * speed);
-
-            // MoveLeft(x, y) --> Move diagonally with left animation
-
-            // MoveRight(x, y)
-
-            // ...
