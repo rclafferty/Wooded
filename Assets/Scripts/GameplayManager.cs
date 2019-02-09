@@ -19,10 +19,26 @@ public class GameplayManager : MonoBehaviour
 
     private bool isPaused;
 
+    // Singleton
+    private GameplayManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        deadValue = 0.5f;
+        deadValue = 0.9f;
         enemies = new ArrayList();
         humans = new ArrayList();
 
@@ -34,7 +50,10 @@ public class GameplayManager : MonoBehaviour
         Instantiate(enemyPrefab, new Vector2(-8, 5), Quaternion.identity);
 
         FindCharacters();
-        Unpause();
+
+        Debug.Log("Pause() : Paused == " + isPaused);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -44,15 +63,37 @@ public class GameplayManager : MonoBehaviour
         {
             isPaused = !isPaused;
 
-            if (isPaused)
+            /* if (isPaused)
                 Pause();
             else
-                Unpause();
+                Unpause(); */
+
+            // System.Threading.Thread.Sleep(100);
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
     }
 
     private void Pause()
     {
+        //isPaused = true;
+        Debug.Log("Pause() : Paused == " + isPaused);
+        mainPlayer.GetComponent<PlayerController>().Pause();
+
+        foreach (GameObject thisHuman in humans)
+        {
+            // ((GameObject)thisHuman).Pause();
+        }
+
+        foreach (GameObject thisEnemy in enemies)
+        {
+            thisEnemy.GetComponent<EnemyController>().Pause();
+        }
+
         Time.timeScale = 0.0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -60,15 +101,30 @@ public class GameplayManager : MonoBehaviour
 
     private void Unpause()
     {
+       // isPaused = false;
+        Debug.Log("Pause() : Paused == " + isPaused);
         Time.timeScale = 1.0f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+
+        mainPlayer.GetComponent<PlayerController>().Unpause();
+
+        foreach (GameObject thisHuman in humans)
+        {
+            // ((GameObject)thisHuman).Pause();
+        }
+
+        foreach (GameObject thisEnemy in enemies)
+        {
+            thisEnemy.GetComponent<EnemyController>().Unpause();
+        }
     }
 
     private void FindCharacters()
     {
         // Add the player to humans
-        humans.Add(mainPlayer);
+        // humans.Add(mainPlayer);
         mainPlayer.GetComponent<PlayerController>().SceneGameplayManager = this;
 
         // Find all humans -- NOT player
@@ -85,6 +141,12 @@ public class GameplayManager : MonoBehaviour
             enemies.Add(thisEnemy);
             thisEnemy.GetComponent<EnemyController>().SceneGameplayManager = this;
         }
+    }
+
+    public void PlayerDied()
+    {
+        // TODO: Implement death
+        Pause();
     }
 
     // Getter/Setter methods

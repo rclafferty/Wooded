@@ -8,14 +8,22 @@ public class PlayerController : MonoBehaviour
     private GameplayManager gameplayManager;
 
     private float speed = 8f;
-    private Rigidbody2D thisRigidBody;
+    private Rigidbody2D thisRigidbody;
     private float hInput = 0;
     private float vInput = 0;
+
+    private int health;
+    private const int MAX_HEALTH = 3;
+    private const int MAX_HEALTH_HANDICAP = 10;
+
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisRigidBody = this.GetComponent<Rigidbody2D>();
+        health = MAX_HEALTH;
+        thisRigidbody = this.GetComponent<Rigidbody2D>();
+        isPaused = false;
     }
 
     // Update is called once per frame
@@ -27,16 +35,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if(Mathf.Abs(hInput) > 0.5 || Mathf.Abs(vInput) > 0.5)
-        //{
-            thisRigidBody.velocity = new Vector2(hInput * speed, vInput * speed);
-
-            // MoveLeft(x, y) --> Move diagonally with left animation
-
-            // MoveRight(x, y)
-
-            // ...
-        //}
+        if (!isPaused)
+        {
+            thisRigidbody.velocity = new Vector2(hInput * speed, vInput * speed);
+        }
+        else
+        {
+            thisRigidbody.velocity = Vector2.zero;
+        }
     }
 
     private float GetDistance(Vector2 t1, Vector2 t2)
@@ -73,5 +79,36 @@ public class PlayerController : MonoBehaviour
         {
             gameplayManager = value;
         }
+    }
+
+    public void Hit(GameObject other)
+    { 
+        Hit(other, 1);
+    }
+
+    public void Hit(GameObject other, int h)
+    {
+        Vector2 newPosition = GetDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
+        health -= h;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        gameplayManager.PlayerDied();
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public void Unpause()
+    {
+        isPaused = false;
     }
 }

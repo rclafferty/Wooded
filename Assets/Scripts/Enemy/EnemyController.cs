@@ -9,12 +9,16 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D thisRigidbody;
     private float playerDistanceThreshold;
 
+    bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
         gameplayManager = GameObject.Find("Gameplay Manager").GetComponent<GameplayManager>();
         thisRigidbody = this.GetComponent<Rigidbody2D>();
         playerDistanceThreshold = 10.0f;
+
+        isPaused = false;
     }
 
     [SerializeField]
@@ -23,10 +27,18 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        distanceToPlayer = GetDistance(thisRigidbody.position, gameplayManager.MainPlayerRigidbody.position);
+        if (!isPaused)
+        {
+            distanceToPlayer = GetDistance(thisRigidbody.position, gameplayManager.MainPlayerRigidbody.position);
+        }
+        else
+        {
+            distanceToPlayer = 0;
+        }
+
         if (Mathf.Abs(distanceToPlayer) < playerDistanceThreshold && Mathf.Abs(distanceToPlayer) > 1.0f)
         {
-            MoveTowardPlayer(distanceToPlayer);
+            MoveTowardPlayer(distanceToPlayer * Time.fixedDeltaTime);
         }
         else
         {
@@ -77,5 +89,20 @@ public class EnemyController : MonoBehaviour
         {
             gameplayManager = value;
         }
+    }
+
+    private void Die()
+    {
+        gameplayManager.PlayerDied();
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public void Unpause()
+    {
+        isPaused = false;
     }
 }
