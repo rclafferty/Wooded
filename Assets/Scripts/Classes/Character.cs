@@ -25,6 +25,10 @@ namespace Assets.Scripts.Classes
             {
                 return sceneObject;
             }
+            /* set
+            {
+                sceneObject = value;
+            } */
         }
 
         public string Name
