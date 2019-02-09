@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     private GameplayManager gameplayManager;
+
     private float speed = 8f;
     private Rigidbody2D thisRigidBody;
     private float hInput = 0;

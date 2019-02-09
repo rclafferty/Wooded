@@ -9,7 +9,10 @@ public class GameplayManager : MonoBehaviour
     private ArrayList enemies;
     private ArrayList humans;
     
+    [SerializeField]
     private GameObject mainPlayer;
+    [SerializeField]
+    private Transform mainPlayerTransform;
     private Rigidbody2D mainPlayerRigidbody;
 
     public Transform enemyPrefab;
@@ -23,7 +26,8 @@ public class GameplayManager : MonoBehaviour
         enemies = new ArrayList();
         humans = new ArrayList();
 
-        mainPlayer = GameObject.Find("Player");
+        //mainPlayer = GameObject.Find("Player");
+        mainPlayer = mainPlayerTransform.gameObject;
         mainPlayerRigidbody = mainPlayer.GetComponent<Rigidbody2D>();
         Debug.Log(mainPlayer.name);
 
