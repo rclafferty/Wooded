@@ -6,31 +6,35 @@ public class PlayerController : MonoBehaviour
 {
     private GameplayManager gameplayManager;
     private float deadValue;
+    // Editable from Unity Editor (needs to be initialzed directly);
+    [SerializeField]
+    private float speed = 5f;
 
-    private Rigidbody2D thisRigidbody;
+    private Rigidbody2D thisRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisRigidbody = GetComponent<Rigidbody2D>();
+        thisRigidBody = GetComponent<Rigidbody2D>();
         gameplayManager = GameObject.Find("Gameplay Manager").GetComponent<GameplayManager>();
-
         deadValue = gameplayManager.DeadValue;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float hInput = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(hInput) > deadValue)
-        {
-            thisRigidbody.velocity = Vector2.right * hInput;
-        }
-
         float vInput = Input.GetAxis("Vertical");
-        if (Mathf.Abs(vInput) > deadValue)
+
+        if(Mathf.Abs(hInput) > deadValue || Mathf.Abs(vInput) > deadValue)
         {
-            thisRigidbody.velocity = Vector2.up * vInput;
+            thisRigidBody.velocity = new Vector2(hInput * speed, vInput * speed);
+
+            // MoveLeft(x, y) --> Move diagonally with left animation
+
+            // MoveRight(x, y)
+
+            // ...
         }
     }
 }
