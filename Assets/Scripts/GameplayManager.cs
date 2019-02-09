@@ -8,7 +8,11 @@ public class GameplayManager : MonoBehaviour
     private float deadValue;
     private ArrayList enemies;
     private ArrayList humans;
+    
     private GameObject mainPlayer;
+    private Rigidbody2D mainPlayerRigidbody;
+
+    public Transform enemyPrefab;
 
     private bool isPaused;
 
@@ -20,9 +24,12 @@ public class GameplayManager : MonoBehaviour
         humans = new ArrayList();
 
         mainPlayer = GameObject.Find("Player");
+        mainPlayerRigidbody = mainPlayer.GetComponent<Rigidbody2D>();
+        Debug.Log(mainPlayer.name);
+
+        Instantiate(enemyPrefab, new Vector2(-8, 5), Quaternion.identity);
 
         FindCharacters();
-
         Unpause();
     }
 
@@ -35,6 +42,8 @@ public class GameplayManager : MonoBehaviour
 
             if (isPaused)
                 Pause();
+            else
+                Unpause();
         }
     }
 
@@ -56,6 +65,7 @@ public class GameplayManager : MonoBehaviour
     {
         // Add the player to humans
         humans.Add(mainPlayer);
+        mainPlayer.GetComponent<PlayerController>().SceneGameplayManager = this;
 
         // Find all humans -- NOT player
         /* GameObject[] h = GameObject.FindGameObjectsWithTag("Human");
@@ -65,11 +75,12 @@ public class GameplayManager : MonoBehaviour
         }*/
 
         // Find all enemies
-        /* GameObject[] e = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] e = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject thisEnemy in e)
         {
             enemies.Add(thisEnemy);
-        }*/
+            thisEnemy.GetComponent<EnemyController>().SceneGameplayManager = this;
+        }
     }
 
     // Getter/Setter methods
@@ -86,6 +97,14 @@ public class GameplayManager : MonoBehaviour
         get
         {
             return mainPlayer;
+        }
+    }
+
+    public Rigidbody2D MainPlayerRigidbody
+    {
+        get
+        {
+            return mainPlayerRigidbody;
         }
     }
 
