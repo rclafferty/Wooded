@@ -22,6 +22,8 @@ public class GameplayManager : MonoBehaviour
         mainPlayer = GameObject.Find("Player");
 
         FindCharacters();
+
+        Unpause();
     }
 
     // Update is called once per frame
@@ -30,13 +32,24 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetAxis("Pause") > deadValue)
         {
             isPaused = !isPaused;
-            Pause(isPaused);
+
+            if (isPaused)
+                Pause();
         }
     }
 
-    private void Pause(bool p)
+    private void Pause()
     {
         Time.timeScale = 0.0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void Unpause()
+    {
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FindCharacters()
