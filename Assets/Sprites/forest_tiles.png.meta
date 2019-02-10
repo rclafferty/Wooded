@@ -24,6 +24,7 @@ TextureImporter:
     21300038: forest_tiles_19
     21300040: forest_tiles_20
     21300042: forest_tiles_21
+    21300044: forest_tiles_8
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -280,6 +281,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 64d775b7557e88540bd04292963e0be3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_tiles_8
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d261d01ac39632b48943edc206482ec6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_tiles_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823288c43d609cb49a1904ed1c07cf4a
       vertices: []
       indices: 
       edges: []
