@@ -29,4 +29,9 @@ public class StartSceneManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    public void ResetGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("title");
+    }
 }

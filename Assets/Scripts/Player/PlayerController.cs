@@ -54,6 +54,42 @@ public class PlayerController : MonoBehaviour
         {
             thisRigidbody.velocity = new Vector2(hInput * SPEED, vInput * SPEED);
         }
+
+        int x1 = 305;
+        int x2 = 300;
+        int y1 = 21;
+        int y2 = 16;
+
+        int x4 = -95;
+        int x5 = -104;
+        int y4 = 4;
+        int y5 = -8;
+
+        if (thisRigidbody.position.x < x1 && thisRigidbody.position.x > x2)
+        {
+            if (thisRigidbody.position.y < y1 && thisRigidbody.position.y > y2)
+            {
+
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "forest")
+                {
+                    thisRigidbody.position = new Vector2(143, 39);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("maze");
+                }
+            }
+        }
+
+        if (thisRigidbody.position.x < x4 && thisRigidbody.position.x > x5)
+        {
+            if (thisRigidbody.position.y < y4 && thisRigidbody.position.y > y5)
+            {
+
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "maze")
+                {
+                    thisRigidbody.position = new Vector2(143, 39);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("end");
+                }
+            }
+        }
     }
 
     private float GetDistance(Vector2 t1, Vector2 t2)
