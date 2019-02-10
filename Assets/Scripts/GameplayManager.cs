@@ -47,7 +47,7 @@ public class GameplayManager : MonoBehaviour
         mainPlayerRigidbody = mainPlayer.GetComponent<Rigidbody2D>();
         Debug.Log(mainPlayer.name);
 
-        Instantiate(enemyPrefab, new Vector2(-8, 5), Quaternion.identity);
+        // Instantiate(enemyPrefab, new Vector2(-8, 5), Quaternion.identity);
 
         FindCharacters();
 
@@ -73,7 +73,7 @@ public class GameplayManager : MonoBehaviour
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit();
+            // Application.Quit();
 #endif
         }
     }
