@@ -7,10 +7,19 @@ public class PlayerController : MonoBehaviour
     private const float SPEED = 8.0f;
     private Rigidbody2D thisRigidbody;
     private int health;
-    private const int MAX_HEALTH = 5;
-    private const int MAX_HEALTH_HANDICAP = 10;
+    private const int MAX_HEALTH = 3;
+    private const int MAX_HEALTH_CANVAS = 10;
+    private float hInput = 0;
+    private float vInput = 0;
+    private bool attack = false;
+    private Animator animator;
 
     private bool isPaused;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -19,10 +28,23 @@ public class PlayerController : MonoBehaviour
         isPaused = false;
     }
 
+    private void Update()
+    {
+        hInput = Input.GetAxis("Horizontal");
+        vInput = Input.GetAxis("Vertical");
+        attack = Input.GetKeyDown("space");
+
+        if (attack)
+        {
+            animator.SetTrigger("Attack");
+        }
+        animator.SetFloat("DownSpeed", vInput);
+        animator.SetFloat("RightSpeed", hInput);
+
+    }
+
     void FixedUpdate()
     {
-        float hInput = Input.GetAxis("Horizontal");
-        float vInput = Input.GetAxis("Vertical");
 
         if (isPaused)
         {
@@ -31,20 +53,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             thisRigidbody.velocity = new Vector2(hInput * SPEED, vInput * SPEED);
-        }
-
-        int x1 = 305;
-        int x2 = 300;
-        int y1 = 21;
-        int y2 = 16;
-
-        if (thisRigidbody.position.x < x1 && thisRigidbody.position.x > x2)
-        {
-            if (thisRigidbody.position.y < y1 && thisRigidbody.position.y > y2)
-            {
-                thisRigidbody.position = new Vector2(143, 39);
-                UnityEngine.SceneManagement.SceneManager.LoadScene("maze");
-            }
         }
     }
 
@@ -81,8 +89,8 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(GameObject other, int h)
     {
-        //Vector2 diffVector = GetNormalizedDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
-        //thisRigidbody.position += diffVector;
+        Vector2 diffVector = GetNormalizedDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
+        thisRigidbody.position += diffVector;
 
         health -= h;
 
