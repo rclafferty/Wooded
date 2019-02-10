@@ -4,44 +4,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameplayManager gameplayManager;
-
-    private float speed = 8f;
+    private const float SPEED = 8.0f;
     private Rigidbody2D thisRigidbody;
-    private float hInput = 0;
-    private float vInput = 0;
-
     private int health;
     private const int MAX_HEALTH = 3;
-    private const int MAX_HEALTH_HANDICAP = 10;
+    private const int MAX_HEALTH_CANVAS = 10;
 
     private bool isPaused;
 
-    // Start is called before the first frame update
     void Start()
     {
         health = MAX_HEALTH;
-        thisRigidbody = this.GetComponent<Rigidbody2D>();
+        thisRigidbody = GetComponent<Rigidbody2D>();
         isPaused = false;
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        hInput = Input.GetAxis("Horizontal");
-        vInput = Input.GetAxis("Vertical");
     }
 
     void FixedUpdate()
     {
-        if (!isPaused)
+        float hInput = Input.GetAxis("Horizontal");
+        float vInput = Input.GetAxis("Vertical");
+
+        if (isPaused)
         {
-            thisRigidbody.velocity = new Vector2(hInput * speed, vInput * speed);
+            thisRigidbody.velocity = Vector2.zero;
         }
         else
         {
-            thisRigidbody.velocity = Vector2.zero;
+            thisRigidbody.velocity = new Vector2(hInput * SPEED, vInput * SPEED);
         }
     }
 
@@ -70,17 +59,7 @@ public class PlayerController : MonoBehaviour
         v.Normalize();
         return v;
     }
-
-    // Getter / Setter Methods
-
-    public GameplayManager SceneGameplayManager
-    {
-        set
-        {
-            gameplayManager = value;
-        }
-    }
-
+    
     public void Hit(GameObject other)
     { 
         Hit(other, 1);
@@ -88,7 +67,9 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(GameObject other, int h)
     {
-        Vector2 newPosition = GetDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
+        Vector2 diffVector = GetNormalizedDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
+        thisRigidbody.position += diffVector;
+
         health -= h;
 
         if (health <= 0)
@@ -99,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        gameplayManager.PlayerDied();
+        GameObject.Find("Gameplay Manager").GetComponent<GameplayManager>().PlayerDied();
     }
 
     public void Pause()
