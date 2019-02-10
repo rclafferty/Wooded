@@ -48,6 +48,14 @@ public class GameplayManager : MonoBehaviour
 #else
 #endif
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+#endif
     }
 
     public void PlayerDied()

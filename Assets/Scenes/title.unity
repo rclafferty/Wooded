@@ -5719,7 +5719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712699532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.003, z: 10}
+  m_LocalPosition: {x: -0.02, y: 0.003, z: 50}
   m_LocalScale: {x: 1.7869481, y: 1.3464243, z: 0.327712}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6703,7 +6703,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 7c7ce8b65457d24498c5c7e3aa97746c, type: 3}
+    m_Texture: {fileID: 2800000, guid: d75d94e3d530e5845ba7a5d188f5b42f, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -10611,10 +10611,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103144020}
-  m_LocalRotation: {x: 0.3319823, y: 0.7528805, z: -0.3145213, w: 0.47332346}
+  m_LocalRotation: {x: 0.35445672, y: 0.63034064, z: -0.37829027, w: 0.5778646}
   m_LocalPosition: {x: -10.25, y: 4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 51.986004, y: 125.09601, z: 19.162}
+  m_LocalEulerAnglesHint: {x: 62.444004, y: 95.699005, z: 1.1960001}

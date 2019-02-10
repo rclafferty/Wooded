@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
 
     bool isPaused;
 
+    private int health;
+    private const int WOLF_HEALTH = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,8 @@ public class EnemyController : MonoBehaviour
         playerDistanceThreshold = 10.0f;
 
         isPaused = false;
+
+        health = WOLF_HEALTH;
     }
 
     [SerializeField]
@@ -52,6 +57,20 @@ public class EnemyController : MonoBehaviour
         thisRigidbody.position += v * speed * Time.deltaTime;
     }
 
+    private bool MoveAwayFromPlayer(float d)
+    {
+        Vector2 v = GetNormalizedDifferenceVector(new Vector2(100, 100), thisRigidbody.position);
+        thisRigidbody.position += v * speed * Time.deltaTime;
+
+        float thresh = 5.0f;
+        if (Mathf.Abs(v.x) <= thresh && Mathf.Abs(v.y) <= thresh)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private float GetDistance(Vector2 t1, Vector2 t2)
     {
         float x1 = t1.x;
@@ -81,19 +100,32 @@ public class EnemyController : MonoBehaviour
         return v.normalized;
     }
 
-    // Getter / Setter Methods
-
-    public GameplayManager SceneGameplayManager
+    public void Hit(GameObject other)
     {
-        set
+        Hit(other, 1);
+    }
+
+    public void Hit(GameObject other, int h)
+    {
+        //Vector2 diffVector = GetNormalizedDifferenceVector(other.GetComponent<Rigidbody2D>().position, thisRigidbody.position);
+        //thisRigidbody.position += diffVector;
+
+        health -= h;
+
+        if (health <= 0)
         {
-            gameplayManager = value;
+            Die();
         }
     }
 
     private void Die()
     {
-        gameplayManager.PlayerDied();
+        while (MoveAwayFromPlayer(-1))
+        {
+            // Move
+        }
+
+        Destroy(gameObject);
     }
 
     public void Pause()
@@ -104,5 +136,29 @@ public class EnemyController : MonoBehaviour
     public void Unpause()
     {
         isPaused = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Collider other = collision.collider;
+
+        if (other.name == "machete")
+        {
+            Hit(other.gameObject);
+        }
+        else if (other.name == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().Hit(gameObject);
+        }
+    }
+
+    // Getter / Setter Methods
+
+    public GameplayManager SceneGameplayManager
+    {
+        set
+        {
+            gameplayManager = value;
+        }
     }
 }

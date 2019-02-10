@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68041015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5793087, y: -0.22853878, z: -9.78125}
+  m_LocalPosition: {x: 294.59048, y: 16.871462, z: -9.78125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2049276312}
@@ -717,7 +717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128783186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5793087, y: -0.22853878, z: -9.78125}
+  m_LocalPosition: {x: 294.59048, y: 16.871462, z: -9.78125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1175958960}
@@ -3012,6 +3012,76 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!1 &1635470607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635470610}
+  - component: {fileID: 1635470609}
+  - component: {fileID: 1635470608}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1635470608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635470607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c215c1555922fa45a0398c1a8f569be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1635470609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635470607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.439148, y: -0.07662201}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.2686157, y: 5.2643166}
+  m_EdgeRadius: 0
+--- !u!4 &1635470610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635470607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 300.5365, y: 19.115503, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737682123
 GameObject:
   m_ObjectHideFlags: 0
@@ -99334,6 +99404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2049276312}
+  - component: {fileID: 2049276313}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -99357,6 +99428,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049276313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049276311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eaa8bf8d5d59c749b399124e6646c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4830049475107547028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99372,12 +99455,12 @@ PrefabInstance:
     - target: {fileID: 4830049475275120558, guid: 26064b227720cd54fa1f2dcacf600ae1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9997689
+      value: 295.17
       objectReference: {fileID: 0}
     - target: {fileID: 4830049475275120558, guid: 26064b227720cd54fa1f2dcacf600ae1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 17.1
       objectReference: {fileID: 0}
     - target: {fileID: 4830049475275120558, guid: 26064b227720cd54fa1f2dcacf600ae1,
         type: 3}
