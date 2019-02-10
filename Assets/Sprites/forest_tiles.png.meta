@@ -67,7 +67,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -121,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 16
-        height: 16
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,32 +131,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29940caec6760fc4592953417371d9fa
+      spriteID: 1fd08f9ed82456f4a9c49ccdb06e3d85
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: forest_tiles_22
+      name: forest_tiles_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 129
-        width: 30
-        height: 30
-      alignment: 9
-      pivot: {x: 0.5484408, y: 0.16091461}
+        x: 34
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 1, y: 0}
-        - {x: -10, y: -10}
-        - {x: -5, y: -14}
-        - {x: 7, y: -15}
-        - {x: 12, y: -11}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b018bb2f1becd5544bfae633524247b5
+      spriteID: cdcb1531336670e41b9d63cf3ab38ce8
       vertices: []
       indices: 
       edges: []
@@ -165,22 +160,18 @@ TextureImporter:
       name: forest_tiles_2
       rect:
         serializedVersion: 2
-        x: 130
-        y: 98
-        width: 27
-        height: 60
-      alignment: 9
-      pivot: {x: 0.51345545, y: 0.08825315}
+        x: 68
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -5.5, y: -27}
-        - {x: -0.5, y: -29}
-        - {x: 6.5, y: -28}
-        - {x: 0.5, y: -21}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298c5e74f02c3b741afc8d36f51e54d7
+      spriteID: 0836c60c14424de4dbd9a02991fabe6a
       vertices: []
       indices: 
       edges: []
@@ -189,22 +180,18 @@ TextureImporter:
       name: forest_tiles_3
       rect:
         serializedVersion: 2
-        x: 196
-        y: 98
-        width: 21
-        height: 60
-      alignment: 9
-      pivot: {x: 0.5346004, y: 0.076142885}
+        x: 102
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -3.5, y: -27}
-        - {x: 0.5, y: -30}
-        - {x: 5.5, y: -28}
-        - {x: 0.5, y: -22}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e6badb50815e2c4c94be98b357eebb5
+      spriteID: fa8fb6b94b707334ea3d93858333a8c7
       vertices: []
       indices: 
       edges: []
@@ -214,9 +201,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 114
-        width: 15
-        height: 13
+        y: 92
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fa558b796eb3ce4683947eb8424ec83
+      spriteID: 3dd71b969053258478761a52452ccf6b
       vertices: []
       indices: 
       edges: []
@@ -233,10 +220,10 @@ TextureImporter:
       name: forest_tiles_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 115
-        width: 16
-        height: 9
+        x: 36
+        y: 94
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,47 +231,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b950a053ef0474ba91c79f73d8ba1e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_6
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 97
-        width: 15
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e956d21bebf9c84eb2fcbd039dfef97
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_7
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 82
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23752d611b5c95f45999a4f2c9d6d0c7
+      spriteID: 69f57c8c3939dde429c61ee337ab6fd2
       vertices: []
       indices: 
       edges: []
@@ -293,238 +240,22 @@ TextureImporter:
       name: forest_tiles_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 81
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 128
+        y: 0
+        width: 112
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4967563, y: 0.06244321}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -22, y: -62}
+        - {x: -12, y: -43}
+        - {x: 20, y: -39}
+        - {x: 29, y: -61}
       tessellationDetail: 0
       bones: []
-      spriteID: d92036e62c25284419590fe7fdca4873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5b293b5942dca84492f0abb4f10bc5f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_9
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 66
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b37edf6e613b0a44c93b36169348ee8d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_13
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 66
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba41de86c098be345abbbe790f70bd29
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_14
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 49
-        width: 12
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fba9b7c57f56234382859a501d0df2f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_15
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 50
-        width: 16
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 108d69f47081d474db88570ae363234a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_16
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 57
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9302f6235d92e0447b609c2bfa5be6a4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_17
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 48
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d33cc2bc0c16be49959bf73311cf9f5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_18
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 33
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 088d49b7dc2285f40bda052f746c5f88
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_19
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 33
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f39d3bd0a6a9864b806703a2a2b668a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_20
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 33
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 502762731bfb07043a8744016c2811a1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forest_tiles_21
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 39
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d5dda8e0b4126b44af6cff057409a01
+      spriteID: 8545f2db92e56d5409132ea641c77b26
       vertices: []
       indices: 
       edges: []
