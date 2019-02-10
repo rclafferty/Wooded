@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - Trees
+  - Tiles
   - 
   - 
   - 
@@ -36,8 +37,11 @@ TagManager:
   - 
   - 
   - 
-  - Background
+  - Boundary
   m_SortingLayers:
+  - name: Boundary
+    uniqueID: 4189666653
+    locked: 0
   - name: Background
     uniqueID: 3168025723
     locked: 0

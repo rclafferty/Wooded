@@ -1,8 +1,10 @@
 fileFormatVersion: 2
-guid: 6d25d81d88337734287cc2504a44cb2d
+guid: 126405ac73470a948b8620e296cd6d04
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Burnt out Campfire_0
+    21300000: BAGMANBOATMAN sheet_0
+    21300002: BAGMANBOATMAN sheet_1
+    21300004: BAGMANBOATMAN sheet_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -46,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Burnt out Campfire_0
+      name: BAGMANBOATMAN sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 63
-        height: 35
+        x: 9
+        y: 5
+        width: 52
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,7 +112,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df519adef8b01ca46b29ea55885f3a4a
+      spriteID: 26e6b182e9afbaa4890fa95abb380abe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BAGMANBOATMAN sheet_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 5
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8d8fd815557f74e96132d4a4c65e91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BAGMANBOATMAN sheet_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 5
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db09d8dc9e4016d48b987c728135210f
       vertices: []
       indices: 
       edges: []
@@ -118,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2e2f74543d7a7424d9d7a6fbb7505602
+    spriteID: 2eed77bd294e03c4caa4c45b1a1695df
     vertices: []
     indices: 
     edges: []
