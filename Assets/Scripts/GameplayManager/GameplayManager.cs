@@ -8,6 +8,7 @@ public class GameplayManager : MonoBehaviour
     private const float DEAD_VALUE = 0.5f;
     private bool isPaused;
     private GameObject mainPlayer;
+    [SerializeField]
     private Transform mainPlayerTransform;
     private Rigidbody2D mainPlayerRigidbody;
     public Transform enemyPrefab;
