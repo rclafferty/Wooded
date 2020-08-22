@@ -1,21 +1,16 @@
 # Wooded
-A KSU Game Jam 2019 game
-## Level Design
-### Intro
-### End
 
-## Character Design
-### Main Player
-- 
-### Other People
-- 
-### Antagonists
-- 
-## Story
-You're camping in the woods, something happens, your mates run away, you're left alone to fend against the vile creatures lurking in the darkness as you make your way back to the safety of you posse.
-### Style (World Design)
-- 
+This game was created as part of the Kansas State University Game Jam 2019.
 
-## Citations
-- Cinemachine Camera Rig Scripts (Free and public)
-	- Licensed under the Unity Companion License for Unity-dependent projects
+## Character Overview
+
+The main character was out camping with friends in the forest. In the middle of the night, wolves attacked and the friends scattered to safety. The main character must traverse the woods to safely reunite with the friends.
+
+## Controls
+
+The game can be played on both keyboard/mouse and Xbox controller.
+
+- Xbox controls: A to attack, left joystick to move
+- Keyboard/mouse controls: Spacebar to attack, WASD or arrow keys to move
+
+The end scene loops back to the title screen, where the game can either be replayed or the player can quit.
